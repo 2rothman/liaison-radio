@@ -7,6 +7,7 @@ bluetooth.onBluetoothDisconnected(function () {
 input.onButtonPressed(Button.A, function () {
     bluetooth.uartWriteString("Temp =")
     bluetooth.uartWriteNumber(input.temperature())
+    bluetooth.uartWriteLine("")
 })
 bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), function () {
     donnee_recue = bluetooth.uartReadUntil(serial.delimiters(Delimiters.NewLine))
